@@ -16,6 +16,8 @@ class MainPage:
 
 	side_bar_menu = (By.CSS_SELECTOR, 'button[aria-haspopup="dialog"]')
 	mobile_button = (By.XPATH, "//div[@data-collapsed='false']//div//button[@type='button']")#this is for the button for showing the settings menu on mobile
+	
+	name_check = lambda self,new_name: (By.XPATH, f"//div[@data-collapsed='false']//div//button[@type='button']//div//p[contains(text(),'{new_name}')]")
 	SETTINGS_BUTTON = (By.XPATH, "//div[contains(text(),'Settings')]")
 	NAME_INPUT = (By.XPATH, "//input[@placeholder='Enter your name']")
 	CHANGE_NAME_BUTTON = (By.XPATH, "//button[normalize-space()='Change name']")
@@ -52,6 +54,7 @@ class MainPage:
 		viewport_width = self.driver.execute_script("return window.innerWidth")
 		print(f"Viewport width: {viewport_width}")
 		print(f"Current window width: {width}")
+		
 		is_mobile = width <= 500
 		if is_mobile:
 			self.driver.find_element(*self.side_bar_menu).click()
@@ -72,9 +75,11 @@ class MainPage:
 		if is_mobile:
 			self.driver.find_element(*self.side_bar_menu).click()
 			WebDriverWait(self.driver, 10).until(
-				EC.text_to_be_present_in_element((By.XPATH, f"//div[@data-collapsed='false']//div//button[@type='button']//div//p[contains(text(),'{new_name}')]"), new_name)
+				EC.text_to_be_present_in_element(self.name_check(new_name), new_name)
 			)
-			return self.driver.find_element(By.XPATH, f"//div[@data-collapsed='false']//div//button[@type='button']//div//p[contains(text(),'{new_name}')]").text
+			return self.driver.find_element(*self.name_check(new_name)).text
+
+
 		else:
 			WebDriverWait(self.driver, 10).until(
 				EC.text_to_be_present_in_element((By.XPATH, f"//p[normalize-space()='{new_name}']"), new_name)
