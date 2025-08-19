@@ -3,6 +3,4 @@ selenium
 pytest-selenium
 pytest
 allure-pytest
-pytest
-allure-pytest
-py
+
