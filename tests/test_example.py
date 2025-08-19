@@ -8,6 +8,9 @@ from utilits.driver_factory import get_driver
 from utilits.POM_helper_class import MainPage
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+import pytest
+import allure
+
 OLLAMA_URL = os.environ.get('OLLAMA_URL', 'http://localhost:3000')  # Default to localhost if not set
 
 class ExampleTestCase(unittest.TestCase):
