@@ -66,7 +66,7 @@ class MainPage:
 		self.driver.find_element(*self.SETTINGS_BUTTON).click()
 		name_input = self.driver.find_element(*self.NAME_INPUT)
 		# For Mac: Keys.COMMAND, for Windows/Linux: Keys.CONTROL
-		name_input.send_keys(Keys.COMMAND + "a")
+		name_input.send_keys(Keys.CONTROL + "a")
 		name_input.send_keys(Keys.DELETE)
 		name_input.send_keys(new_name)
 		self.driver.find_element(*self.CHANGE_NAME_BUTTON).click()
