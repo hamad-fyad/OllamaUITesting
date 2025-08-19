@@ -79,7 +79,6 @@ class MainPage:
 			)
 			return self.driver.find_element(*self.name_check(new_name)).text
 
-
 		else:
 			WebDriverWait(self.driver, 10).until(
 				EC.text_to_be_present_in_element((By.XPATH, f"//p[normalize-space()='{new_name}']"), new_name)
