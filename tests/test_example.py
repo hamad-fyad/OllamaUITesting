@@ -12,7 +12,7 @@ import pytest
 import allure
 
 OLLAMA_URL = os.environ.get('OLLAMA_URL', 'http://localhost:3000')  # Default to localhost if not set
-
+# OLLAMA_URL = "http://54.246.63.185:3000"
 class ExampleTestCase(unittest.TestCase):
     
     

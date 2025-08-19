@@ -74,13 +74,13 @@ class MainPage:
 		from selenium.webdriver.support import expected_conditions as EC
 		if is_mobile:
 			self.driver.find_element(*self.side_bar_menu).click()
-			WebDriverWait(self.driver, 10).until(
+			WebDriverWait(self.driver, 20).until(
 				EC.text_to_be_present_in_element(self.name_check(new_name), new_name)
 			)
 			return self.driver.find_element(*self.name_check(new_name)).text
 
 		else:
-			WebDriverWait(self.driver, 10).until(
+			WebDriverWait(self.driver, 20).until(
 				EC.text_to_be_present_in_element((By.XPATH, f"//p[normalize-space()='{new_name}']"), new_name)
 			)
 		return self.driver.find_element(By.XPATH, f"//p[normalize-space()='{new_name}']").text
