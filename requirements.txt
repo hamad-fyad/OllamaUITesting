@@ -3,4 +3,4 @@ selenium
 pytest-selenium
 pytest
 allure-pytest
-
+locust
