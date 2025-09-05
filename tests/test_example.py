@@ -40,7 +40,6 @@ class ExampleTestCase(unittest.TestCase):
     @allure.description("This test verifies that the Ollama UI homepage title contains 'Ollama UI'.")
     @allure.severity(allure.severity_level.CRITICAL)
     @allure.tag("smoke", "ui")
-    @allure.owner("Hamad Fyad")
     def test_page_title(self):
         with allure.step("Navigate to Ollama UI"):
             self.page.go_to(OLLAMA_URL)
