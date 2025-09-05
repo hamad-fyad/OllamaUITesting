@@ -11,7 +11,7 @@ class MainPage:
 	MESSAGE_BOX = (By.NAME, "message")
 	SEND_BUTTON = (By.CSS_SELECTOR, "button[type='submit']")
 	RESPONSE = (By.CSS_SELECTOR, ".p-4.bg-secondary.text-secondary-foreground.rounded-r-lg.rounded-tl-lg.break-words.max-w-full.whitespace-pre-wrap")
-	PROFILE_BUTTON = (By.ID, "radix-:Rln7mjt6:")  # Adjust this ID based on your actual application this might change
+	PROFILE_BUTTON = (By.ID, "radix-:R5dptkva:")  # Adjust this ID based on your actual application this might change
 	# PROFILE_BUTTON = (By.ID, "radix-:Rln7mjt6:")  # Adjust this ID based on your actual application --- IGNORE ---
 
 	side_bar_menu = (By.CSS_SELECTOR, 'button[aria-haspopup="dialog"]')
