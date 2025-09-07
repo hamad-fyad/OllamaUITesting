@@ -18,12 +18,8 @@ def pytest_configure(config):
         f.write("Browsers=Chrome, Firefox\n")
         f.write("Resolutions=Desktop (1920x1080), Laptop (1366x768), Tablet (1024x768), Mobile (375x667)\n")
         f.write(f"Target.URL={os.getenv('OLLAMA_URL', 'NOT_SET')}\n")
-        f.write(f"Ollama.Version={os.getenv('OLLAMA_VERSION', os.getenv('IMAGE_TAG', 'NOT_SET'))}\n")
         f.write(f"Ollama.Image={os.getenv('OLLAMA_UI_IMAGE', os.getenv('OLLAMA_UI_IMG_TAG', 'NOT_SET'))}\n")
-        f.write(f"YOLO.Version={os.getenv('YOLO_VERSION', 'NOT_SET')}\n")
         f.write(f"YOLO.Image={os.getenv('YOLO_IMAGE', os.getenv('YOLO_IMG_TAG', 'NOT_SET'))}\n")
-        f.write(f"Postgres.Version={os.getenv('POSTGRES_VERSION', 'NOT_SET')}\n")
-
 
 @pytest.hookimpl(tryfirst=True, hookwrapper=True)
 def pytest_runtest_call(item):
