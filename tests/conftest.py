@@ -53,13 +53,10 @@ def pytest_runtest_call(item):
 
         # Attach service versions from env
         for key in [
-            "YOLO_VERSION",
             "YOLO_IMAGE",
             "YOLO_IMG_TAG",
-            "OLLAMA_VERSION",
             "OLLAMA_UI_IMAGE",
             "OLLAMA_UI_IMG_TAG",
-            "POSTGRES_VERSION",
             "IMAGE_TAG",
         ]:
             val = os.getenv(key)
