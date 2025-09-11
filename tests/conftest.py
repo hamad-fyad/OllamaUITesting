@@ -20,6 +20,8 @@ def pytest_configure(config):
         f.write(f"Target.URL={os.getenv('OLLAMA_URL', 'NOT_SET')}\n")
         f.write(f"Ollama.Image={os.getenv('OLLAMA_UI_IMAGE', os.getenv('OLLAMA_UI_IMG_TAG', 'NOT_SET'))}\n")
         f.write(f"YOLO.Image={os.getenv('YOLO_IMAGE', os.getenv('YOLO_IMG_TAG', 'NOT_SET'))}\n")
+        f.write(f"ollama_img_tag={os.getenv('ollama_img_tag', 'NOT_SET')}\n")
+        
 
 @pytest.hookimpl(tryfirst=True, hookwrapper=True)
 def pytest_runtest_call(item):
